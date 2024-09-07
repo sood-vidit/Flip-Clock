@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flip Clock</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap");
+    </style>
+  </head>
+  <body>
+      
+      <button id="theme-toggle">Toggle Theme</button>
+
+    <div class="header">
+        <div class="date"></div>
+        <h3 id="date"></h3>
+    </div>
+    
+    <div class="clock">
+      <div class="flip-clock">
+        <div class="clock-unit">
+          <div class="flip">
+            <div class="card front" id="hours-top">00</div>
+            <div class="card back" id="hours-bottom">00</div>
+          </div>
+        </div>
+
+        <div class="clock-unit">
+          <div class="flip">
+            <div class="card front" id="minutes-top">00</div>
+            <div class="card back" id="minutes-bottom">00</div>
+          </div>
+        </div>
+
+        <div class="clock-unit">
+          <div class="flip">
+            <div class="card front" id="seconds-top">00</div>
+            <div class="card back" id="seconds-bottom">00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".clock-unit"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 1,
+      });
+      VanillaTilt.init(document.querySelectorAll(".flip-clock"), {
+        max: 25,
+        speed: 400,
+        glare: false,
+      });
+    </script>
+  </body>
+</html>
